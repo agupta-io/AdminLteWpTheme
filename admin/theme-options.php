@@ -105,12 +105,17 @@ if (!function_exists('of_options')) {
             'type' => 'checkbox');
 
         $options[] = array(
-            "name" => "Logo",
+            "name" => "Mini Logo",
             "desc" => "You can upload an image for logo. If you check logo panel true, it'll appear.",
-            "id" => "logo",
+            "id" => "minilogo",
             'std' => '',
             "type" => "upload");
-
+        $options[] = array(
+                "name" => "Large Logo",
+                "desc" => "You can upload an image for logo. If you check logo panel true, it'll appear.",
+                "id" => "largelogo",
+                'std' => '',
+                "type" => "upload");
         $options[] = array(
             'name' => __('Panel Info Text', 'options_check'),
             'desc' => __('A mini text that will appear next to the logo.', 'options_check'),

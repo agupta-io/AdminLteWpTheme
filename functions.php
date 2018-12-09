@@ -243,7 +243,7 @@ function wp_nav_menu_no_ul()
         'echo' => false,
         'container' => false,
         'theme_location' => 'headermenu',
-        'walker' => new Header_Nav_Menu()
+				'fallback_cb'=> 'default_page_menu'
     );
     $menu = wp_nav_menu($options);
     echo preg_replace(array(

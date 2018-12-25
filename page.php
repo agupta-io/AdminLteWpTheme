@@ -19,7 +19,7 @@
 
 <div class="box box-default color-palette-box">
         <div class="box-header with-border">
-          <h3 class="box-title"><?php the_title(); ?></h3>
+          <h3 class="box-title">YYYYY</h3>
         </div>
         <div class="box-body">
               

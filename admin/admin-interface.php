@@ -160,8 +160,7 @@ function optionsframework_options_page()
     <?php if (!empty($update_message)) echo $update_message; ?>
     <div style="clear:both;"></div>
     </div>
-    <div style="margin-left:110px;">Design & Coding : <a href="http://www.erhankilic.org" title="Erhan Kılıç">Erhan
-            Kılıç</a></div>
+    <div style="margin-left:110px;"> GIT Reference : <a href="https://github.com/agupta-io/AdminLteWpTheme" title="agupta-io/AdminLteWpTheme">agupta-io/AdminLteWpTheme</a></div>
     <!--wrap-->
     <?php
 }

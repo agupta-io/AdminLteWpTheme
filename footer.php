@@ -34,11 +34,8 @@
 
 <script type="text/javascript">
 jQuery(document).ready(function(){
+jQuery("#contentWrapper").css({display:''});
 jQuery(".tree").prepend('<li class="header">MAIN NAVIGATION</li>');
-var menu=jQuery(".tree .active").parents(".treeview");
-if(menu.length>0){
-    jQuery(menu).addClass("menu-open active");
-}
 
 jQuery(".tree").attr("data-widget","tree");
 });

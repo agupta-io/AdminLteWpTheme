@@ -26,7 +26,7 @@ class Sidebar_Nav_Menu extends Walker_Nav_Menu
     function start_lvl(&$output, $depth = 0, $arg = [])
     {
         $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"treeview-menu\" >\n";
+        $output .= "\n$indent<ul class=\"treeview-menu\" style=\"display:block\">\n";
     }
     function start_el(&$output, $item, $depth = 0, $args = [], $id = 0)
     {   
@@ -39,7 +39,7 @@ class Sidebar_Nav_Menu extends Walker_Nav_Menu
         
          // depth dependent classes
          $depth_classes = array(
-            ((strpos($class_names,"menu-item-has-children")!==false) ? 'treeview' : 'sub-menu-item'),
+            ((strpos($class_names,"menu-item-has-children")!==false) ? 'treeview menu-open' : 'sub-menu-item'),
             #($depth >= 2 && (strpos($class_names,"menu-item-has-children")!==false) ? 'treeview' : 'sub-sub-menu-item'),
             ($depth % 2 ? 'menu-item-odd' : 'menu-item-even'),
             'menu-item-depth-' . $depth
@@ -243,7 +243,7 @@ function wp_nav_menu_no_ul()
         'echo' => false,
         'container' => false,
         'theme_location' => 'headermenu',
-				'fallback_cb'=> 'default_page_menu'
+         'walker' => new Sidebar_Nav_Menu()
     );
     $menu = wp_nav_menu($options);
     echo preg_replace(array(

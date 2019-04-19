@@ -232,6 +232,7 @@
 
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
+        
         var count = 2;
         var total = <?php echo $wp_query->max_num_pages; ?>;
         $(window).scroll(function () {

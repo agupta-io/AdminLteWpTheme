@@ -16,7 +16,8 @@
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>"/>
     <link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>"/>
     <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>"/>
-    <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+    
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
     <?php if (is_singular()) wp_enqueue_script('comment-reply'); ?>
     <style>
@@ -74,8 +75,10 @@
     </script>
     <?php wp_head(); ?>
 </head>
-<body class="hold-transition skin-<?php echo get_option('theme_color') ? get_option('theme_color') : 'blue ' ?> <?php echo get_option('theme_layout') ? get_option('theme_layout') : 'fixed' ?> <?php echo get_option('left_menu_check') == 'true' ? ' sidebar-mini' : '' ?>">
-<div class="wrapper">
+<body class="hold-transition skin-<?php echo get_option('theme_color') ? get_option('theme_color') : 'blue ' ?> <?php echo get_option('theme_layout') ? get_option('theme_layout') : 'fixed' ?> <?php echo get_option('left_menu_check') == 'true' ? ' sidebar-mini' : '' ?>" >
+<div class="loader"></div>
+
+<div class="wrapper" id="contentWrapper" style="display:none;">
 
     <header class="main-header">
         <?php if (get_option('theme_layout') == 'layout-top-nav' || get_option('theme_layout') == 'layout-top-nav fixed') : ?>
@@ -169,12 +172,12 @@
             </nav>
         <?php else: ?>
             <!-- Logo -->
-            <a href="<?php bloginfo('url'); ?>" class="logo">
+            <a href="<?php bloginfo('url'); ?>" class="logo" style="padding:0px 0px">
             <span class="logo-mini"  ><img src="<?php echo get_option('minilogo'); ?>" 
                              alt="<?php bloginfo('name'); ?>"/></span>
                 <!-- logo for regular state and mobile devices -->
                <span class="logo-lg" > <img  src="<?php echo get_option('largelogo'); ?>" 
-                             alt="<?php bloginfo('name'); ?>"/></span>
+                             alt="<?php bloginfo('name'); ?>" style="width:100%"/></span>
             </a>
 
             <!-- Header Navbar: style can be found in header.less -->
